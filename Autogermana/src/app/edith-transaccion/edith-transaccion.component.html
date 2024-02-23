@@ -1,0 +1,22 @@
+<div *ngIf="tran">
+  <h2>{{tran.transaccionID}}</h2>
+  <div>
+    ID:
+    <input [ngModel]="tran.transaccionID" placeholder="ID">
+  </div>
+
+  <div>
+    Fecha:
+    <input type="date" [ngModel]="tran.fechaVenta" placeholder="Fehca">
+  </div>
+
+  <div>
+    Precio:
+    <input [ngModel]="tran.precioVenta" placeholder="Precio">
+  </div>
+
+  <button (click)="updateTransaccion(tran)" *ngIf="tran.transaccionID">Save</button>
+  <button (click)="deleteTransaccion(tran)" *ngIf="tran.transaccionID">Deleted</button>
+  <button (click)="createTransaccion(tran)" *ngIf="!tran.transaccionID">Create</button>
+
+</div>
